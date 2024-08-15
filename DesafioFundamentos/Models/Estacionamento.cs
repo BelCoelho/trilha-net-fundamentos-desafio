@@ -35,10 +35,18 @@ namespace DesafioFundamentos.Models
             while (veiculos.Any(x => x.ToUpper() != placaRemover.ToUpper()))
             {
                 Console.WriteLine("Desculpe, esse veículo não está estacionado aqui. Confira se digitou a placa corretamente");
-                Console.WriteLine($"A placa digitada foi: {placaRemover.ToUpper()}");
+                Console.WriteLine($"A placa digitada foi: {placaRemover.ToUpper()}\n");
+
+                Console.WriteLine("Histórico de carros adicionados: ");
+                for (int contador = 0;contador < veiculos.Count; contador++)
+                {
+                    Console.WriteLine($"Posição N° {contador + 1}° - {veiculos[contador].ToUpper()}");
+                }
 
                 Console.WriteLine("\nDigite a placa do veículo para remover:");
                 placaRemover = Console.ReadLine();
+
+
             }
 
             // Pedir para o usuário digitar a placa e armazenar na variável placa
